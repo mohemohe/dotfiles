@@ -8,6 +8,7 @@ function git_pull_or_clone() {
     if [[ -d "$2" ]]; then
         cd "$2"
         git pull
+        git submodule foreach git pull origin master
     else
         git clone --recursive "$1" "$2"
     fi
