@@ -17,21 +17,28 @@ has_curl="$?"
 command -v wget &> /dev/null
 has_wget="$?"
 
-## pacapt
-mkdir -p "$HOME/.local/bin"
-pacapt="$HOME/.local/bin/pacapt"
 if [[ ! -x "$pacapt" ]]; then
     if [[ "$has_curl" == "0" ]]; then
-        curl https://github.com/icy/pacapt/raw/ng/pacapt > "$pacapt"
+        alias fetch="curl"
     elif [[ "$has_wget" == "0" ]]; then
-        wget -O - https://github.com/icy/pacapt/raw/ng/pacapt > "$pacapt"
+        alias fetch="wget -O -"
     else
         echo curlかwgetをインストールして再実行してください
         exit 1
     fi
 fi
 
+mkdir -p "$HOME/.local/bin"
+
+## pacapt
+pacapt="$HOME/.local/bin/pacapt"
+fetch https://github.com/icy/pacapt/raw/ng/pacapt > "$pacapt"
 chmod +x "$pacapt"
+
+## sshconf
+sshconf="$HOME/.local/bin/sshconf"
+fetch https://raw.githubusercontent.com/mohemohe/sshconf/master/sshconf > "$sshconf"
+chmod +x "$sshconf"
 
 ## zsh
 ln -nfs "$DOTFILES/zsh/" "$HOME/.zsh"
