@@ -3,7 +3,7 @@ set -x
 
 DOTFILES="$HOME/.dotfiles"
 
-git pull https://github.com/mohemohe/dotfiles.git "$DOTFILES"
+git clone https://github.com/mohemohe/dotfiles.git "$DOTFILES"
 
 echo "##################################################"
 echo "  pacapt"
