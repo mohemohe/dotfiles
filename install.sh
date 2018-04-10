@@ -37,12 +37,18 @@ mkdir -p "$HOME/.local/bin"
 
 ## pacapt
 pacapt="$HOME/.local/bin/pacapt"
+if [[ -e "$pacapt" ]]; then
+    rm -f "$pacapt"
+fi
 fetch https://github.com/icy/pacapt/raw/ng/pacapt > "$pacapt"
 chmod +x "$pacapt"
 
 ## sshconf
 sshconf="$HOME/.local/bin/sshconf"
-fetch https://raw.githubusercontent.com/mohemohe/sshconf/master/sshconf > "$sshconf"
+if [[ -e "$sshconf" ]]; then
+    rm -f "$sshconf"
+fi
+fetch https://raw.githubusercontent.com/mohemohe/sshconf/master/sshconf >| "$sshconf"
 chmod +x "$sshconf"
 
 ## zsh
