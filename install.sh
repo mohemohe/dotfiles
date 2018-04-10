@@ -3,14 +3,18 @@ set -xe
 
 DOTFILES="$HOME/.dotfiles"
 
-cd="$(pwd)"
-if [[ -d "$DOTFILES" ]]; then
-    cd "$DOTFILES"
-    git pull
-else
-    git clone https://github.com/mohemohe/dotfiles.git "$DOTFILES"
-fi
-cd "$cd"
+function git_pull_or_clone() {
+    cd="$(pwd)"
+    if [[ -d "$2" ]]; then
+        cd "$2"
+        git pull
+    else
+        git clone --recursive "$1" "$2"
+    fi
+    cd "$cd"
+}
+
+git_pull_or_clone https://github.com/mohemohe/dotfiles.git "$DOTFILES"
 
 command -v curl &> /dev/null
 has_curl="$?"
@@ -46,7 +50,7 @@ ln -nfs "$DOTFILES/zsh/.zshrc" "$HOME/.zshrc"
 touch "$HOME/.zshrc2"
 
 ## prezto
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "$HOME/.zprezto"
+git_pull_or_clone https://github.com/sorin-ionescu/prezto.git "$HOME/.zprezto"
 ln -nfs "$HOME/.zprezto/runcoms/zpreztorc" "$HOME/.zpreztorc"
 ln -nfs "$HOME/.zprezto/runcoms/zprofile" "$HOME/.zprofile"
 ln -nfs "$HOME/.zprezto/runcoms/zshenv" "$HOME/.zshenv"
