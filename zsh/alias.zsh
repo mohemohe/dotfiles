@@ -3,6 +3,7 @@
 unalias rsync
 unalias sl
 unalias bower
+unalias ls
 
 alias -g C='| cat'
 alias -g G='| grep'
