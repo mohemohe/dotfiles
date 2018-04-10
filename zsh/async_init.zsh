@@ -43,10 +43,10 @@
     eval $(thefuck --alias) && \
     Z_VERBOSE_LOG DONE 'initialize thefuck' \
 ) & ( \
-  [ -z "$SSH_AUTH_SOCK" ] && \
-    #eval `ssh-agent -s` && \
-    #ssh-add ~/.ssh/* &> /dev/null && \
-    #Z_VERBOSE_LOG DONE 'initialize ssh-agent' \
+  #[ -z "$SSH_AUTH_SOCK" ] && \
+  #  eval `ssh-agent -s` && \
+  #  ssh-add ~/.ssh/* &> /dev/null && \
+  #  Z_VERBOSE_LOG DONE 'initialize ssh-agent' \
 ) & ( \
   #command -v sshconf &> /dev/null && \
   #[ "$?" -eq "0" ] && \
