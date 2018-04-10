@@ -1,6 +1,8 @@
 .dotfiles
 ====
 
+たぶんmacOSでもArchLinuxでもDeepinでも動く
+
 ```bash
 curl https://raw.githubusercontent.com/mohemohe/dotfiles/master/install.sh | sh
 ```
