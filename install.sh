@@ -3,7 +3,14 @@ set -xe
 
 DOTFILES="$HOME/.dotfiles"
 
-git clone https://github.com/mohemohe/dotfiles.git "$DOTFILES"
+cd="$(pwd)"
+if [[ -d "$DOTFILES" ]]; then
+    cd "$DOTFILES"
+    git pull
+else
+    git clone https://github.com/mohemohe/dotfiles.git "$DOTFILES"
+fi
+cd "$cd"
 
 command -v curl &> /dev/null
 has_curl="$?"
