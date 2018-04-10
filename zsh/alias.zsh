@@ -28,6 +28,7 @@ alias view='vim -Ro'
 alias vim='vim'
 alias zshconfig='vim ~/.zshrc'
 alias zshreload='exec zsh'
-[ ! command -v pacman ] && alias pacman='pacapt'
+command -v pacman &> /dev/null
+[ "$?" != 0 ] && alias pacman='pacapt'
 alias -s py='python'
 alias -s exe='mono'
