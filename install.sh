@@ -18,7 +18,7 @@ command -v wget &> /dev/null
 has_wget="$?"
 
 ## pacapt
-mkdir -p pacapt="$HOME/.local/bin"
+mkdir -p "$HOME/.local/bin"
 pacapt="$HOME/.local/bin/pacapt"
 if [[ ! -x "$pacapt" ]]; then
     if [[ "$has_curl" == "0" ]]; then
