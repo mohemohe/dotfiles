@@ -52,7 +52,7 @@ fetch https://raw.githubusercontent.com/mohemohe/sshconf/master/sshconf >| "$ssh
 chmod +x "$sshconf"
 
 ## zsh
-ln -nfs "$DOTFILES/zsh/" "$HOME"
+ln -nfs "$DOTFILES/zsh" "$HOME/.zsh"
 ln -nfs "$DOTFILES/zsh/.zshrc" "$HOME/.zshrc"
 touch "$HOME/.zshrc2"
 
