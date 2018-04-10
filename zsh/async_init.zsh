@@ -48,8 +48,8 @@
     #ssh-add ~/.ssh/* &> /dev/null && \
     #Z_VERBOSE_LOG DONE 'initialize ssh-agent' \
 ) & ( \
-  command -v sshconf &> /dev/null && \
-  [ "$?" -eq "0" ] && \
-    eval "$(sshconf -g)" &> /dev/null && \
-    Z_VERBOSE_LOG DONE 'generated ~/.ssh/config' \
+  #command -v sshconf &> /dev/null && \
+  #[ "$?" -eq "0" ] && \
+  #  eval "$(sshconf -g)" &> /dev/null && \
+  #  Z_VERBOSE_LOG DONE 'generated ~/.ssh/config' \
 ) &
