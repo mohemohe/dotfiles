@@ -1,5 +1,5 @@
 #!/bin/sh
-set -x
+set -xe
 
 DOTFILES="$HOME/.dotfiles"
 
