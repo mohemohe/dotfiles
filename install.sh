@@ -5,15 +5,12 @@ DOTFILES="$HOME/.dotfiles"
 
 git clone https://github.com/mohemohe/dotfiles.git "$DOTFILES"
 
-echo "##################################################"
-echo "  pacapt"
-echo "##################################################"
-
 command -v curl &> /dev/null
 has_curl="$?"
 command -v wget &> /dev/null
 has_wget="$?"
 
+## pacapt
 pacapt="$HOME/.local/bin/pacapt"
 if [[ ! -x "$pacapt" ]]; then
     if [[ "$has_curl" == "0" ]]; then
@@ -28,18 +25,12 @@ fi
 
 chmod +x "$pacapt"
 
-echo "##################################################"
-echo "  zsh"
-echo "##################################################"
-
+## zsh
 ln -nfs "$DOTFILES/zsh/" "$HOME/.zsh"
 ln -nfs "$DOTFILES/zsh/.zshrc" "$HOME/.zshrc"
 touch "$HOME/.zshrc2"
 
-echo "##################################################"
-echo "  prezto"
-echo "##################################################"
-
+## prezto
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "$HOME/.zprezto"
 ln -nfs "$HOME/.zprezto/runcoms/zpreztorc" "$HOME/.zpreztorc"
 ln -nfs "$HOME/.zprezto/runcoms/zprofile" "$HOME/.zprofile"
