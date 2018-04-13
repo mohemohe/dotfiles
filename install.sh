@@ -22,6 +22,7 @@ has_curl="$?"
 command -v wget &> /dev/null
 has_wget="$?"
 
+pacapt="$HOME/.local/bin/pacapt"
 if [[ ! -x "$pacapt" ]]; then
     if [[ "$has_curl" == "0" ]]; then
         alias fetch="curl"
@@ -36,7 +37,6 @@ fi
 mkdir -p "$HOME/.local/bin"
 
 ## pacapt
-pacapt="$HOME/.local/bin/pacapt"
 if [[ -e "$pacapt" ]]; then
     rm -f "$pacapt"
 fi
