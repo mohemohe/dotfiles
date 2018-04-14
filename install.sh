@@ -28,7 +28,7 @@ pacapt="$HOME/.local/bin/pacapt"
 fetch=
 if [[ ! -x "$pacapt" ]]; then
     if [[ "$has_curl" == "0" ]]; then
-        fetch="curl"
+        fetch="curl -L"
     elif [[ "$has_wget" == "0" ]]; then
         fetch="wget -O -"
     else
