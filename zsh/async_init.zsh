@@ -10,12 +10,12 @@
     Z_VERBOSE_LOG DONE 'initialize rbenv' \
 ) & ( \
   [ -d ~/.pyenv ] && \
-    eval "$(pyenv init -)" &&
-    export PATH="~/.pyenv/bin:$PATH" && \
+    export PATH="$HOME/.pyenv/bin:$PATH" && \
+    eval "$(pyenv init -)" && \
     Z_VERBOSE_LOG DONE 'initialize pyenv' && \
-  [ -d ~/.pyenv/plugins/pyenv-virtualenv ] && \
-    eval "$(pyenv virtualenv-init -)" && \
-    Z_VERBOSE_LOG DONE 'initialize pyenv-virtualenv' \
+    [ -d ~/.pyenv/plugins/pyenv-virtualenv ] && \
+      eval "$(pyenv virtualenv-init -)" && \
+      Z_VERBOSE_LOG DONE 'initialize pyenv-virtualenv' \
 ) & ( \
   [ -d ~/.yarn ] && \
     eval "$(export PATH=$HOME/.yarn/bin:$PATH)" && \
