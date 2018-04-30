@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 INIT_VERBOSE=true
 
 source "$HOME/.zsh/kurukuru.zsh"
