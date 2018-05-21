@@ -1,16 +1,16 @@
 #!/bin/sh
 set -uxe
 
-set +e
-command -v curl 2> /dev/null 1>&2
-has_curl="$?"
-command -v wget 2> /dev/null 1>&2
-has_wget="$?"
-set -e
+has_command() {
+    set +e
+    command -v $1 2> /dev/null 1>&2
+    echo "$?"
+    set -e
+}
 
-if [ "$has_curl" ]; then
+if [ `has_command curl` ]; then
     __fetch="curl -L"
-elif [ "$has_wget" ]; then
+elif [ `has_command wget` ]; then
     __fetch="wget -O -"
 else
     echo curlかwgetをインストールして再実行してください
