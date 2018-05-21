@@ -7,6 +7,8 @@ DOTFILES=$(cd "$DIRNAME"; pwd)
 # shellcheck disable=1090,2039
 source "$DOTFILES/_lib.sh"
 
+mkdir -p "$HOME/.local/bin"
+
 loader pacapt "$DOTFILES/install/pacapt.sh"
 loader sshconf "$DOTFILES/install/sshconf.sh"
 
