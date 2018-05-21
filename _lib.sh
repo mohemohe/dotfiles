@@ -2,10 +2,8 @@
 set -uxe
 
 has_command() {
-    set +e
     command -v $1 2> /dev/null 1>&2
     echo "$?"
-    set -e
 }
 
 if [ `has_command curl` ]; then
