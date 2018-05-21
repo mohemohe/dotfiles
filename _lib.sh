@@ -2,13 +2,13 @@
 set -uxe
 
 has_command() {
-    command -v $1 2> /dev/null 1>&2
+    command -v "$1" 2> /dev/null 1>&2
     echo "$?"
 }
 
-if [ `has_command curl` ]; then
+if [ "$(has_command curl)" -eq "0" ]; then
     __fetch="curl -L"
-elif [ `has_command wget` ]; then
+elif [ "$(has_command wget)" -eq "0" ]; then
     __fetch="wget -O -"
 else
     echo curlかwgetをインストールして再実行してください
@@ -16,7 +16,7 @@ else
 fi
 
 fetch() {
-    $__fetch "$*" 
+    $__fetch "$*"
 }
 
 git_pull_or_clone() {
@@ -33,9 +33,9 @@ git_pull_or_clone() {
 
 loader() {
     if [ -z "$2" ]; then
-        target=$1
+        target="$1"
     else
-        target=$2
+        target="$2"
         set +x
         echo
         echo "##############################"
