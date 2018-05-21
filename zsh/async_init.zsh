@@ -1,5 +1,11 @@
 #!/bin/zsh
 
+[ -d ~/.rbenv ] && \
+  export PATH="$HOME/.rbenv/bin:$PATH"
+
+[ -d ~/.pyenv ] && \
+  export PATH="$HOME/.pyenv/bin:$PATH"
+
 ( \
   [ -f ~/.fzf.zsh ] && \
     eval "$(source ~/.fzf.zsh)" && \
@@ -10,7 +16,6 @@
     Z_VERBOSE_LOG DONE 'initialize rbenv' \
 ) & ( \
   [ -d ~/.pyenv ] && \
-    export PATH="$HOME/.pyenv/bin:$PATH" && \
     eval "$(pyenv init -)" && \
     Z_VERBOSE_LOG DONE 'initialize pyenv' && \
     [ -d ~/.pyenv/plugins/pyenv-virtualenv ] && \
