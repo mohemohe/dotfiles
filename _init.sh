@@ -24,3 +24,7 @@ fi
 if [ "$(has_command tmux)" -eq "0" ]; then
     loader tmux "$DOTFILES/install/tmux.sh"
 fi
+
+if [ "$(has_command vim)" -eq "0" ]; then
+    loader vim "$DOTFILES/install/vim.sh"
+fi

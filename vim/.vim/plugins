@@ -1,0 +1,21 @@
+call plug#begin('~/.vim/plugged')
+
+Plug 'baskerville/bubblegum'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdtree'
+Plug 'xuyuanp/nerdtree-git-plugin'
+Plug 'Shougo/neocomplcache'
+Plug 'ervandew/supertab'
+Plug 'w0rp/ale'
+Plug 'elzr/vim-json'
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'nvie/vim-togglemouse'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'Yggdroot/indentLine'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tacahiroy/ctrlp-funky'
+Plug 'suy/vim-ctrlp-commandline'
+Plug 'moll/vim-bbye'
+
+call plug#end()

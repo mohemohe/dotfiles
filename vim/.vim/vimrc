@@ -1,0 +1,113 @@
+set encoding=utf-8
+scriptencoding utf-8
+
+source ~/.vim/plugins
+
+" airline
+let g:airline_theme = 'bubblegum'
+"let g:airline_powerline_fonts = 1
+set laststatus=2
+let g:airline_section_c = '%t'
+let g:airline_section_x = '%{&filetype}'
+let g:airline_section_z = '%3l:%2v %{airline#extensions#ale#get_warning()} %{airline#extensions#ale#get_error()}'
+let g:airline#extensions#default#section_truncate_width = {}
+let g:airline#extensions#default#layout = [['a', 'b', 'c'], ['x', 'y', 'z']]
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#ale#error_symbol = ' '
+let g:airline#extensions#ale#warning_symbol = ' '
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#whitespace#enabled = 1
+let g:airline#extensions#wordcount#enabled = 0
+nmap <C-Left> <Plug>AirlineSelectPrevTab
+nmap <C-Right> <Plug>AirlineSelectNextTab
+
+" tablemode
+let g:table_mode_corner = '|'
+
+" neocomplcache
+let g:acp_enableAtStartup = 0
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_min_syntax_length = 1
+let g:neocomplcache_dictionary_filetype_lists = {
+    \ 'default' : ''
+    \ }
+inoremap <expr><C-g>     neocomplcache#undo_completion()
+inoremap <expr><C-l>     neocomplcache#complete_common_string()
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return neocomplcache#smart_close_popup() . "\<CR>"
+endfunction
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplcache#close_popup()
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
+
+" nerdtree
+let g:NERDTreeShowBookmarks=1
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeDirArrowExpandable  = '▶'
+let g:NERDTreeDirArrowCollapsible = '▼'
+autocmd vimenter * NERDTree
+map <C-\> :NERDTreeToggle<CR><Esc>
+
+" CtrlP
+let g:ctrlp_match_window = 'order:ttb,min:20,max:20,results:100'
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_types = ['fil']
+let g:ctrlp_extensions = ['funky', 'commandline']
+command! CtrlPCommandLine call ctrlp#init(ctrlp#commandline#id())
+let g:ctrlp_funky_matchtype = 'path'
+
+" user
+colorscheme bubblegum-256-dark
+set nobackup
+set noswapfile
+set autoread
+set hidden
+set fileencoding=utf-8
+set ambiwidth=double
+set cursorline
+set virtualedit=onemore
+set showmatch
+set number
+set tabstop=4
+set shiftwidth=4
+set ignorecase
+set smartcase
+set incsearch
+set wrapscan
+set hlsearch
+set wildmenu
+set smartindent
+nmap <Esc><Esc> :nohlsearch<CR><Esc>
+nnoremap <C-n> :enew<CR><Esc>
+nnoremap <C-q> :Bdelete<CR><Esc>
+nnoremap j gj
+nnoremap k gk
+
+if has('mouse')
+    set mouse=a
+    if has('mouse_sgr')
+        set ttymouse=sgr
+    elseif v:version > 703 || v:version is 703 && has('patch632')
+        set ttymouse=sgr
+    else
+        set ttymouse=xterm2
+    endif
+endif
+
+if &term =~ "xterm"
+    let &t_SI .= "\e[?2004h"
+    let &t_EI .= "\e[?2004l"
+    let &pastetoggle = "\e[201~"
+
+    function XTermPasteBegin(ret)
+        set paste
+        return a:ret
+    endfunction
+
+    inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
+endif

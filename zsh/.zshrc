@@ -41,6 +41,8 @@ stopIndicator
 wait
 set -m
 
+stty -ixon
+
 if [[ -s "${ZDOTDIR:-$HOME}/.zshrc2" ]]; then
   source "${ZDOTDIR:-$HOME}/.zshrc2"
 fi
