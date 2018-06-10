@@ -44,5 +44,5 @@ loader() {
         set -x
     fi
     # shellcheck disable=1090,2039
-    source "$target"
+    . "$target"
 }
