@@ -5,7 +5,7 @@ DIRNAME="$(dirname "$0")"
 DOTFILES=$(cd "$DIRNAME"; pwd)
 
 # shellcheck disable=1090,2039
-source "$DOTFILES/_lib.sh"
+. "$DOTFILES/_lib.sh"
 
 mkdir -p "$HOME/.local/bin"
 
