@@ -17,5 +17,10 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
 Plug 'suy/vim-ctrlp-commandline'
 Plug 'moll/vim-bbye'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi'
+Plug 'pangloss/vim-javascript'
+Plug 'kchmck/vim-coffee-script'
 
 call plug#end()
