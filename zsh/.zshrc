@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-INIT_VERBOSE=true
+INIT_VERBOSE=false
 
 source "$HOME/.zsh/kurukuru.zsh"
 
