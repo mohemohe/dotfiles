@@ -5,7 +5,6 @@ source ~/.vim/plugins
 
 " airline
 let g:airline_theme = 'bubblegum'
-"let g:airline_powerline_fonts = 1
 set laststatus=2
 let g:airline_section_c = '%t'
 let g:airline_section_x = '%{&filetype}'
@@ -37,7 +36,7 @@ inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
-  return neocomplcache#smart_close_popup() . "\<CR>"
+    return neocomplcache#smart_close_popup() . "\<CR>"
 endfunction
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
@@ -50,8 +49,14 @@ let g:NERDTreeShowBookmarks=1
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable  = '▶'
 let g:NERDTreeDirArrowCollapsible = '▼'
-autocmd vimenter * NERDTree
-map <C-\> :NERDTreeToggle<CR><Esc>
+if has('nvim') && exists('g:gui_oni')
+    let g:nerdtree_tabs_open_on_console_startup = 0
+else
+    let g:nerdtree_tabs_open_on_console_startup = 1
+endif
+let g:nerdtree_tabs_open_on_new_tab = 1
+" autocmd vimenter * NERDTreeTabsToggle
+map <C-\> :NERDTreeTabsToggle<CR><Esc>
 
 " CtrlP
 let g:ctrlp_match_window = 'order:ttb,min:20,max:20,results:100'
@@ -74,6 +79,7 @@ set virtualedit=onemore
 set showmatch
 set number
 set tabstop=4
+set smarttab
 set shiftwidth=4
 set ignorecase
 set smartcase
@@ -84,18 +90,20 @@ set wildmenu
 set smartindent
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 nnoremap <C-n> :enew<CR><Esc>
-nnoremap <C-q> :Bdelete<CR><Esc>
+nnoremap <C-q> :Bwipeout<CR><Esc>
 nnoremap j gj
 nnoremap k gk
 
 if has('mouse')
     set mouse=a
-    if has('mouse_sgr')
-        set ttymouse=sgr
-    elseif v:version > 703 || v:version is 703 && has('patch632')
-        set ttymouse=sgr
-    else
-        set ttymouse=xterm2
+    if !has('nvim')
+        if has('mouse_sgr')
+            set ttymouse=sgr
+        elseif v:version > 703 || v:version is 703 && has('patch632')
+            set ttymouse=sgr
+        else
+            set ttymouse=xterm2
+        endif
     endif
 endif
 

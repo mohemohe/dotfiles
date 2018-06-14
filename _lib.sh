@@ -24,10 +24,11 @@ git_pull_or_clone() {
     if [ -d "$2" ]; then
         cd "$2"
         git pull
-        git submodule foreach git pull origin master
     else
-        git clone --recursive "$1" "$2"
+        git clone "$1" "$2"
     fi
+    cd "$2"
+    git submodule update --init --recursive -j 9
     cd "$cd"
 }
 
