@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-INIT_VERBOSE=false
+INIT_VERBOSE=true
 
 source "$HOME/.zsh/kurukuru.zsh"
 
@@ -19,7 +19,7 @@ if [[ "$INIT_VERBOSE" == "false" ]]; then {
   set +m
 } fi
 
-command -v neofetch &> /dev/null && neofetch --ascii_colors 4 4 4 4 4 4 4 4 1> /tmp/neofetch 2>/dev/null &
+command -v neofetch &> /dev/null && neofetch 1> /tmp/neofetch 2>/dev/null &
 
 # macOSのパス初期化　並列化してはいけない
 [ -x /usr/libexec/path_helper ] && eval "$(/usr/libexec/path_helper -s)" && Z_VERBOSE_LOG DONE 'initialize path_helper'
