@@ -7,11 +7,11 @@
 たぶんmacOSでもArchLinuxでもDeepinでも動く
 
 ```bash
-curl https://raw.githubusercontent.com/mohemohe/dotfiles/master/install.sh | sh
+curl dotfiles.mohemohe.jp | sh
 ```
 
 or
 
 ```bash
-wget -O - https://raw.githubusercontent.com/mohemohe/dotfiles/master/install.sh | sh
+wget -O - dotfiles.mohemohe.jp | sh
 ```
