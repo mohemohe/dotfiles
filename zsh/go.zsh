@@ -1,4 +1,3 @@
 #!/bin/zsh
 
-export GOPATH="$HOME/.go"
-export PATH="$HOME/.go/bin:$PATH"
+export PATH="$GOPATH/bin:$PATH"
