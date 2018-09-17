@@ -32,3 +32,15 @@ fi
 if [ "$(has_command nvim)" -eq "0" ]; then
     loader neovim "$DOTFILES/install/nvim.sh"
 fi
+
+if [ "$(has_command compton)" -eq "0" ]; then
+    loader compton "$DOTFILES/install/compton.sh"
+fi
+
+if [ "$(has_command tint2)" -eq "0" ]; then
+    loader tint2 "$DOTFILES/install/tint2.sh"
+fi
+
+if [ "$(has_command jgmenu)" -eq "0" ]; then
+    loader jgmenu "$DOTFILES/install/jgmenu.sh"
+fi
