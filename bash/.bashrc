@@ -13,3 +13,5 @@ stty -ixon
 if [[ -s "${HOME}/.bashrc2" ]]; then {
     source "${HOME}/.bashrc2"
 } fi
+
+[[ -s "/home/mohemohe/.gvm/scripts/gvm" ]] && source "/home/mohemohe/.gvm/scripts/gvm"

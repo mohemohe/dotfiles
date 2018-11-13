@@ -11,5 +11,5 @@ while True:
     with open('/proc/loadavg') as f:
         loadavg = [_ for _ in f.readline().strip().split(' ')]
     with open('/dev/shm/cpu', mode='w') as f:
-        f.write(' LA: %s %s %s\nCPU: %3.2f%%' % (loadavg[0], loadavg[1], loadavg[2], utilisation))
+        f.write(' LA: %s %s %s\nCPU: %05.2f%%' % (loadavg[0], loadavg[1], loadavg[2], utilisation))
     time.sleep(1)
