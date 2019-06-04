@@ -18,11 +18,13 @@ if [[ -d ~/.pyenv ]]; then {
     export PATH="$HOME/.pyenv/bin:$PATH"
 } fi
 
-if command -v pyenv &> /dev/null; then {
+command -v pyenv &> /dev/null
+if [[ "$?" == "0" ]]; then {
     eval "$(pyenv init -)"
     Z_VERBOSE_LOG DONE 'initialize pyenv'
 
-    if pyenv virtualenv-init - &> /dev/null; then {
+    pyenv virtualenv-init - &> /dev/null
+    if [[ "$?" == "" ]]; then {
         eval "$(pyenv virtualenv-init -)"
         Z_VERBOSE_LOG DONE 'initialize pyenv-virtualenv'
     } fi
