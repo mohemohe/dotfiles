@@ -18,7 +18,7 @@ function indicator() {
 }
 
 function startIndicator() {
-  if [[ -n "$1" ]]; then {
+  if [[ "$1" != "" ]]; then {
     INDICATOR_MESSAGE=$1
   } fi
   set +m

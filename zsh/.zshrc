@@ -1,7 +1,6 @@
 #!/bin/zsh
 
-INIT_VERBOSE=true
-
+source "$HOME/.zshconfig"
 source "$HOME/.zsh/kurukuru.zsh"
 
 function Z_VERBOSE_LOG() {
