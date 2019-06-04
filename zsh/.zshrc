@@ -3,6 +3,8 @@
 source "$HOME/.zshconfig"
 source "$HOME/.zsh/kurukuru.zsh"
 
+UID="$(id -u)"
+
 function Z_VERBOSE_LOG() {
   if [[ "$INIT_VERBOSE" == "true" ]]; then {
     local tmp="[$1]"
@@ -18,7 +20,7 @@ if [[ "$INIT_VERBOSE" == "false" ]]; then {
   set +m
 } fi
 
-command -v neofetch &> /dev/null && neofetch 1> /tmp/neofetch 2>/dev/null &
+command -v neofetch &> /dev/null && neofetch 1> "/tmp/neofetch-$UID" 2>/dev/null &
 
 # macOSのパス初期化　並列化してはいけない
 [ -x /usr/libexec/path_helper ] && eval "$(/usr/libexec/path_helper -s)" && Z_VERBOSE_LOG DONE 'initialize path_helper'
@@ -47,7 +49,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zshrc2" ]]; then
 fi
 
 echo
-[ -e /tmp/neofetch ] && cat /tmp/neofetch
+[ -e "/tmp/neofetch-$UID" ] && cat "/tmp/neofetch-$UID"
 
 # reset
 echo . > /dev/null
