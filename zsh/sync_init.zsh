@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 if [[ -f "$HOME/.fzf.zsh" ]]; then {
     eval "$(source "$HOME/.fzf.zsh")"
@@ -9,7 +9,7 @@ if [[ -d ~/.rbenv ]]; then {
     export PATH="$HOME/.rbenv/bin:$PATH"
 } fi
 
-if command rbenv &> /dev/null; then {
+if command -v rbenv &> /dev/null; then {
     eval "$(rbenv init -)"
     Z_VERBOSE_LOG DONE 'initialize rbenv'
 } fi
@@ -18,7 +18,7 @@ if [[ -d ~/.pyenv ]]; then {
     export PATH="$HOME/.pyenv/bin:$PATH"
 } fi
 
-if command pyenv &> /dev/null; then {
+if command -v pyenv &> /dev/null; then {
     eval "$(pyenv init -)"
     Z_VERBOSE_LOG DONE 'initialize pyenv'
 
@@ -48,12 +48,12 @@ if [[ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completio
     Z_VERBOSE_LOG DONE 'initialize google-cloud-sdk (completion)'
 } fi
 
-if command fasd &> /dev/null; then {
+if command -v fasd &> /dev/null; then {
     eval "$(fasd --init auto)" &> /dev/null && \
     Z_VERBOSE_LOG DONE 'initialize fasd'
 } fi
     
-if command thefuck &> /dev/null; then {
+if command -v thefuck &> /dev/null; then {
     eval "$(thefuck --alias)" && \
     Z_VERBOSE_LOG DONE 'initialize thefuck'
 } fi
