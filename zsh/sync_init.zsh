@@ -9,7 +9,7 @@ if [[ -d ~/.rbenv ]]; then {
     export PATH="$HOME/.rbenv/bin:$PATH"
 } fi
 
-if command -v rbenv &> /dev/null; then {
+if command rbenv &> /dev/null; then {
     eval "$(rbenv init -)"
     Z_VERBOSE_LOG DONE 'initialize rbenv'
 } fi
@@ -18,13 +18,11 @@ if [[ -d ~/.pyenv ]]; then {
     export PATH="$HOME/.pyenv/bin:$PATH"
 } fi
 
-command -v pyenv &> /dev/null
-if [[ "$?" == "0" ]]; then {
+if command pyenv &> /dev/null; then {
     eval "$(pyenv init -)"
     Z_VERBOSE_LOG DONE 'initialize pyenv'
 
-    pyenv virtualenv-init - &> /dev/null
-    if [[ "$?" == "" ]]; then {
+    if pyenv virtualenv-init - &> /dev/null; then {
         eval "$(pyenv virtualenv-init -)"
         Z_VERBOSE_LOG DONE 'initialize pyenv-virtualenv'
     } fi
@@ -50,12 +48,12 @@ if [[ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completio
     Z_VERBOSE_LOG DONE 'initialize google-cloud-sdk (completion)'
 } fi
 
-if command -v fasd &> /dev/null; then {
+if command fasd &> /dev/null; then {
     eval "$(fasd --init auto)" &> /dev/null && \
     Z_VERBOSE_LOG DONE 'initialize fasd'
 } fi
     
-if command -v thefuck &> /dev/null; then {
+if command thefuck &> /dev/null; then {
     eval "$(thefuck --alias)" && \
     Z_VERBOSE_LOG DONE 'initialize thefuck'
 } fi
