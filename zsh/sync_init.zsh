@@ -5,6 +5,16 @@ if [[ -f "$HOME/.fzf.zsh" ]]; then {
     Z_VERBOSE_LOG DONE 'initialize fzf'
 } fi
 
+if [[ -d ~/.goenv ]]; then {
+    export GOENV_ROOT="$HOME/.goenv"
+    export PATH="$GOENV_ROOT/bin:$PATH"
+} fi
+
+if command -v goenv &> /dev/null; then {
+    eval "$(goenv init -)"
+    Z_VERBOSE_LOG DONE 'initialize goenv'
+} fi
+
 if [[ -d ~/.rbenv ]]; then {
     export PATH="$HOME/.rbenv/bin:$PATH"
 } fi
