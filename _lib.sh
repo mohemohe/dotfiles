@@ -1,5 +1,5 @@
 #!/bin/sh
-if [ "${SILENT}" -ne "1" ]; then
+if [ "${SILENT}" != "1" ]; then
     set -uxe
 fi
 
@@ -24,7 +24,7 @@ fetch() {
 git_pull_or_clone() {
     cd="$(pwd)"
     if [ -d "$2" ]; then
-        if [ "${SKIP_UPDATE:-0}" -ne "1" ]; then
+        if [ "${SKIP_UPDATE:-0}" != "1" ]; then
             cd "$2"
             git pull
         fi
@@ -32,7 +32,7 @@ git_pull_or_clone() {
         git clone "$1" "$2"
     fi
     cd "$2"
-    if [ "${SKIP_UPDATE:-0}" -ne "1" ]; then
+    if [ "${SKIP_UPDATE:-0}" != "1" ]; then
         git submodule update --init --recursive -j 9
     fi
     cd "$cd"
@@ -43,7 +43,7 @@ loader() {
         target="$1"
     else
         target="$2"
-        if [ "${SILENT}" -ne "1" ]; then
+        if [ "${SILENT}" != "1" ]; then
             set +x
             echo
             echo "##############################"

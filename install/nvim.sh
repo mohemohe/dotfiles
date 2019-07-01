@@ -9,6 +9,6 @@ touch "${HOME}/.vimrc2"
 rm -f "${HOME}/.local/share/nvim/site/autoload/plug.vim"
 fetch https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim > "${HOME}/.local/share/nvim/site/autoload/plug.vim"
 
-if [ "${CI}" -ne "1" ]; then
+if [ "${CI}" != "1" ]; then
     nvim +silent +VimEnter +PlugInstall +qall
 fi

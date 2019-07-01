@@ -8,6 +8,6 @@ touch "$HOME/.vimrc2"
 rm -f "${HOME}/.vim/autoload/plug.vim"
 fetch https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim > "${HOME}/.vim/autoload/plug.vim"
 
-if [ "${CI}" -ne "1" ]; then
+if [ "${CI}" != "1" ]; then
     vim +silent +VimEnter +PlugInstall +qall
 fi

@@ -1,5 +1,5 @@
 #!/bin/sh
-if [ "${SILENT}" -ne "1" ]; then
+if [ "${SILENT}" != "1" ]; then
     set -uxe
 fi
 
