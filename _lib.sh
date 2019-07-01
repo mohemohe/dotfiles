@@ -1,5 +1,7 @@
 #!/bin/sh
-set -uxe
+if [ "${SILENT}" -ne "1" ]; then
+    set -uxe
+fi
 
 has_command() {
     command -v "$1" 2> /dev/null 1>&2
@@ -44,7 +46,9 @@ loader() {
         echo "##############################"
         echo "$1"
         echo "##############################"
-        set -x
+        if [ "${SILENT}" -ne "1" ]; then
+            set -x
+        fi
     fi
     # shellcheck disable=1090,2039
     . "$target"

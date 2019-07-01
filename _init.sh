@@ -1,5 +1,7 @@
 #!/bin/sh
-set -uxe
+if [ "${SILENT}" -ne "1" ]; then
+    set -uxe
+fi
 
 DIRNAME="$(dirname "$0")"
 DOTFILES=$(cd "$DIRNAME"; pwd)
