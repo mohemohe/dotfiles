@@ -1,5 +1,5 @@
 #!/bin/sh
-if [ "${SILENT}" != "1" ]; then
+if [ "${SILENT:-0}" != "1" ]; then
     set -uxe
 fi
 
@@ -43,7 +43,7 @@ loader() {
         target="$1"
     else
         target="$2"
-        if [ "${SILENT}" != "1" ]; then
+        if [ "${SILENT:-0}" != "1" ]; then
             set +x
             echo
             echo "##############################"
