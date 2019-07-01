@@ -9,7 +9,7 @@ has_command() {
 }
 
 if [ "$(has_command curl)" -eq "0" ]; then
-    __fetch="curl -L"
+    __fetch="curl -Ls"
 elif [ "$(has_command wget)" -eq "0" ]; then
     __fetch="wget -O -"
 else
@@ -23,9 +23,11 @@ fetch() {
 
 git_pull_or_clone() {
     cd="$(pwd)"
-    if [ -d "$2" ] && [ "${SKIP_UPDATE:-0}" -ne "1" ]; then
-        cd "$2"
-        git pull
+    if [ -d "$2" ]; then
+        if [ "${SKIP_UPDATE:-0}" -ne "1" ]; then
+            cd "$2"
+            git pull
+        fi
     else
         git clone "$1" "$2"
     fi
