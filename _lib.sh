@@ -21,14 +21,14 @@ fetch() {
 
 git_pull_or_clone() {
     cd="$(pwd)"
-    if [ -d "$2" ] && [ "${SKIP_UPDATE}" -ne "1" ]; then
+    if [ -d "$2" ] && [ "${SKIP_UPDATE:-0}" -ne "1" ]; then
         cd "$2"
         git pull
     else
         git clone "$1" "$2"
     fi
     cd "$2"
-    if [ "${SKIP_UPDATE}" -ne "1" ]; then
+    if [ "${SKIP_UPDATE:-0}" -ne "1" ]; then
         git submodule update --init --recursive -j 9
     fi
     cd "$cd"
