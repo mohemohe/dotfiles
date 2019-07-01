@@ -41,12 +41,12 @@ loader() {
         target="$1"
     else
         target="$2"
-        set +x
-        echo
-        echo "##############################"
-        echo "$1"
-        echo "##############################"
         if [ "${SILENT}" -ne "1" ]; then
+            set +x
+            echo
+            echo "##############################"
+            echo "$1"
+            echo "##############################"
             set -x
         fi
     fi
