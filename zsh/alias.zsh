@@ -18,7 +18,7 @@ alias explorer='ranger'
 alias ex='explorer'
 alias helpMac='sudo bash -c "pkill -HUP powerd; pkill -HUP blued; pkill -HUP quicklookd"'
 alias preztoconfig='vim ~/.zpreztorc'
-alias restartkde='killall plasmashell &> /dev/null; kstart plasmashell &> /dev/null'
+alias restartkde='killall plasmashell &> /dev/null; kstart5 plasmashell | sytemd-cat'
 alias -g sl='sl; ls'
 alias serve-http='python2 -m SimpleHTTPServer'
 alias ssh="env TERM=xterm-256color ssh"
