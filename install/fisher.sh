@@ -2,7 +2,7 @@
 
 curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 
-fisher add mohemohe/theme-paradox
-fisher add edc/bass
-fisher add oh-my-fish/plugin-expand
-fisher add decors/fish-ghq
+/usr/bin/env fish -c fisher add mohemohe/theme-paradox
+/usr/bin/env fisher add edc/bass
+/usr/bin/env fisher add oh-my-fish/plugin-expand
+/usr/bin/env fisher add decors/fish-ghq
