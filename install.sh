@@ -17,5 +17,5 @@ git_pull_or_clone() {
 
 git_pull_or_clone https://github.com/mohemohe/dotfiles.git "$DOTFILES"
 
-find .dotfiles -print0 -name '*.sh' | xargs -0 chmod +x
+find "$DOTFILES" -print0 -name '*.sh' | xargs -0 chmod +x
 __DOTFILES="$DOTFILES" "$DOTFILES/_init.sh"
