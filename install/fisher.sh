@@ -1,8 +1,12 @@
-#!/usr/bin/env fish
+#!/bin/sh
 
 curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 
-/usr/bin/env fish -c fisher add mohemohe/theme-paradox
-/usr/bin/env fisher add edc/bass
-/usr/bin/env fisher add oh-my-fish/plugin-expand
-/usr/bin/env fisher add decors/fish-ghq
+fisher_add() {
+    /usr/bin/env DOTFILES_INSTALL=1 fish -c fisher add "$1"
+}
+
+fisher_add mohemohe/theme-paradox
+fisher_add edc/bass
+fisher_add oh-my-fish/plugin-expand
+fisher_add decors/fish-ghq

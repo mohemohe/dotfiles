@@ -4,4 +4,6 @@ set fish_color_param white
 
 source "$HOME/.fish/user.fish"
 
-neofetch
+if [ "$DOTFILES_INSTALL" != 1 ]
+    neofetch
+end
