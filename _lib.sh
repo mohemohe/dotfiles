@@ -26,6 +26,7 @@ git_pull_or_clone() {
     if [ -d "$2" ]; then
         if [ "${SKIP_UPDATE:-0}" != "1" ]; then
             cd "$2"
+            git reset --hard
             git pull
         fi
     else
