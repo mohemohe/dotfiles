@@ -7,6 +7,7 @@ git_pull_or_clone() {
     cd="$(pwd)"
     if [ -d "$2" ]; then
         cd "$2"
+        git reset --hard
         git pull
         git submodule foreach git pull origin master
     else
