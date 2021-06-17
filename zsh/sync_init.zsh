@@ -27,7 +27,9 @@ if command -v rbenv &> /dev/null; then {
 } fi
 
 if [[ -d ~/.pyenv ]]; then {
-    export PATH="$HOME/.pyenv/bin:$PATH"
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init --path)"
 } fi
 
 if command -v pyenv &> /dev/null; then {
