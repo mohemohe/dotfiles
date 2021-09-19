@@ -24,6 +24,7 @@ alias serve-http='python2 -m SimpleHTTPServer'
 alias ssh="env TERM=xterm-256color ssh"
 alias sync='sync;sync;sync'
 alias tmuxpowerlineconf='vim ~/.tmux/tmux-powerline/themes/default.sh'
+alias update-dotfiles='~/.dotfiles/install.sh'
 alias view='vim -Ro'
 alias vim='vim'
 alias zshconfig='vim ~/.zshrc'
