@@ -42,6 +42,12 @@ if command -v pyenv &> /dev/null; then {
     } fi
 } fi
 
+if [[ -d ~/.n ]]; then {
+    export N_PREFIX="$HOME/.n"
+    export PATH="$N_PREFIX/bin:$PATH"
+    Z_VERBOSE_LOG DONE 'initialize n'
+} fi
+
 if [[ -d ~/.yarn ]]; then {
     export PATH="$HOME/.yarn/bin:$PATH"
     Z_VERBOSE_LOG DONE 'initialize yarn'
