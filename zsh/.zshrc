@@ -33,6 +33,8 @@ source "$HOME/.zsh/hook_ssh_background.zsh"
 source "$HOME/.zsh/hook_virtualenv_prompt.zsh"
 source "$HOME/.zsh/async_init.zsh"
 source "$HOME/.zsh/sync_init.zsh"
+source "$HOME/.zsh/wsl.zsh"
+source "$HOME/.zsh/non-wsl.zsh"
 
 source "$HOME/.zsh/homebrew.zsh"
 command -v go &> /dev/null && source "$HOME/.zsh/go.zsh"

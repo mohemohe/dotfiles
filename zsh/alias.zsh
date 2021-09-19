@@ -31,7 +31,6 @@ alias zshreload='exec zsh'
 command -v pacman &> /dev/null
 [[ "$?" != "0" ]] && alias pacman='pacapt'
 alias -s py='python'
-alias -s exe='mono'
 
 ls --help 2>&1 | grep -e '--color' &> /dev/null
 [[ "$?" == "0" ]] && alias ls='ls --color'
