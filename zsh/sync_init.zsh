@@ -77,3 +77,8 @@ if command -v thefuck &> /dev/null; then {
     eval "$(thefuck --alias)" && \
     Z_VERBOSE_LOG DONE 'initialize thefuck'
 } fi
+
+if command -v direnv &> /dev/null; then {
+    eval "$(direnv hook $SHELL)" && \
+    Z_VERBOSE_LOG DONE 'initialize direnv'
+} fi
