@@ -33,6 +33,7 @@ source "$HOME/.zsh/hook_ssh_background.zsh"
 source "$HOME/.zsh/hook_virtualenv_prompt.zsh"
 source "$HOME/.zsh/async_init.zsh"
 source "$HOME/.zsh/sync_init.zsh"
+source "$HOME/.zsh/linux.zsh"
 source "$HOME/.zsh/wsl.zsh"
 source "$HOME/.zsh/non-wsl.zsh"
 
