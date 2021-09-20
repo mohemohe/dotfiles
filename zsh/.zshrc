@@ -34,6 +34,7 @@ source "$HOME/.zsh/hook_virtualenv_prompt.zsh"
 source "$HOME/.zsh/hook_easy_bg_fg.zsh"
 source "$HOME/.zsh/async_init.zsh"
 source "$HOME/.zsh/sync_init.zsh"
+command -v go &> /dev/null && source "$HOME/.zsh/go.zsh"
 source "$HOME/.zsh/aws.zsh"
 source "$HOME/.zsh/mac.zsh"
 source "$HOME/.zsh/linux.zsh"
@@ -41,7 +42,6 @@ source "$HOME/.zsh/wsl.zsh"
 source "$HOME/.zsh/non-wsl.zsh"
 
 source "$HOME/.zsh/homebrew.zsh"
-command -v go &> /dev/null && source "$HOME/.zsh/go.zsh"
 
 export PATH=.:$HOME/.local/bin:/opt/bin:./node_modules/.bin:$PATH
 
