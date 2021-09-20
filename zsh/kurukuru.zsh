@@ -29,5 +29,7 @@ function startIndicator() {
 function stopIndicator() {
   kill $INDICATOR_PID &> /dev/null
   wait
+  CLEAR_MESSAGE="$(echo "$INDICATOR_MESSAGE" | sed 's|.| |g' )"
+  echo -e "    $CLEAR_MESSAGE\e[1A"
   set -m
 }
