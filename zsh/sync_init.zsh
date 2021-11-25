@@ -8,7 +8,6 @@ if [[ -f "$HOME/.fzf.zsh" ]]; then {
 if [[ -d ~/.goenv ]]; then {
     export GOENV_ROOT="$HOME/.goenv"
     export PATH="$GOENV_ROOT/bin:$PATH"
-    export GOENV_DISABLE_GOROOT=1
     export GOENV_DISABLE_GOPATH=1
 } fi
 
