@@ -3,7 +3,7 @@
 curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 
 fisher_add() {
-    /usr/bin/env DOTFILES_INSTALL=1 fish -c fisher add "$1"
+    /usr/bin/env DOTFILES_INSTALL=1 fish -c "fisher install $1"
 }
 
 fisher_add mohemohe/theme-paradox
