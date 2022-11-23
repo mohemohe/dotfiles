@@ -24,8 +24,8 @@ if [ "$(has_command zsh)" -eq "0" ]; then
 fi
 
 if [ "$(has_command fish)" -eq "0" ]; then
-    loader fisher "$DOTFILES/install/fisher.sh"
     loader fish "$DOTFILES/install/fish.sh"
+    loader fisher "$DOTFILES/install/fisher.sh"
 fi
 
 if [ "$(has_command tmux)" -eq "0" ]; then
