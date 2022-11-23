@@ -3,6 +3,7 @@
 SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_cls:clear
 SETUVAR _fish_abbr_restartkde:killall\x20plasmashell\x20\x26\x3e\x20/dev/null\x3b\x20kstart5\x20plasmashell\x20\x7c\x20sytemd\x2dcat
+SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:green
