@@ -5,7 +5,7 @@ abbr restartkde 'killall plasmashell &> /dev/null; kstart5 plasmashell | sytemd-
 alias ssh "env TERM=xterm-256color ssh"
 alias update-dotfiles '~/.dotfiles/install.sh'
 alias view 'vim -Ro'
-alias fishreload 'exec fish $argv'
+alias fishreload 'exec fish -l'
 alias unset 'set -e'
 
 if [ ! command -v pacman &> /dev/null ]

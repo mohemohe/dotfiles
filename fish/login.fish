@@ -4,7 +4,7 @@ end
 
 Z_VERBOSE_LOG START early hooks
 
-for i in ( find "$HOME/.fish/early_hooks" -type f )
+for i in ( find "$HOME/.fish/early_hooks" -type f | sort )
   source "$i"
 end
 
@@ -22,7 +22,7 @@ set fish_color_command green
 set fish_color_quote yellow
 set fish_color_param white
 
-for i in ( find "$HOME/.fish/include" -type f )
+for i in ( find "$HOME/.fish/include" -type f | sort )
   source "$i"
 end
 
