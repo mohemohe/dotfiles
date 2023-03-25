@@ -15,3 +15,6 @@ if [[ -s "${HOME}/.bashrc2" ]]; then {
 } fi
 
 [[ -s "/home/mohemohe/.gvm/scripts/gvm" ]] && source "/home/mohemohe/.gvm/scripts/gvm"
+
+source /Users/mohemohe/.docker/init-bash.sh || true # Added by Docker Desktop
+. "$HOME/.cargo/env"

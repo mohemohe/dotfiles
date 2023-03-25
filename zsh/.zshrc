@@ -60,3 +60,5 @@ echo
 
 # reset
 echo . > /dev/null
+
+source /Users/mohemohe/.docker/init-zsh.sh || true # Added by Docker Desktop
