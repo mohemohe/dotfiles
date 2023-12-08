@@ -6,6 +6,7 @@ alias ssh "env TERM=xterm-256color ssh"
 alias update-dotfiles '~/.dotfiles/install.sh'
 alias view 'vim -Ro'
 alias fishreload 'exec fish -l'
+alias fishrestart 'exec env -u GOROOT $(which fish) -l'
 alias unset 'set -e'
 
 if [ ! command -v pacman &> /dev/null ]
@@ -14,6 +15,11 @@ end
 
 if ls --help 2>&1 | grep -e '--color' &> /dev/null
   alias ls 'ls --color'
+end
+
+if command -v exa &> /dev/null
+  alias ls 'exa'
+  alias la 'll -a'
 end
 
 Z_VERBOSE_LOG DONE 'initialize alias'
