@@ -5,5 +5,8 @@ if [ -d "$N_PREFIX" ]
   if not contains -- "$N_PREFIX/bin" $fish_user_paths
     set -U fish_user_paths "$N_PREFIX/bin" $fish_user_paths
   end
+  if not contains -- "./node_modules/.bin" $fish_user_paths
+    set -U fish_user_paths "./node_modules/.bin" $fish_user_paths
+  end
   Z_VERBOSE_LOG DONE 'initialize n'
 end
