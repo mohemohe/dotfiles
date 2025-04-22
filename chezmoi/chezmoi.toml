@@ -1,2 +1,3 @@
 [hooks.apply.post]
-command = "~/.fish/hooks/chezmoi/post-apply.fish"
+command = "env"
+args = ["fish", "-c", "~/.fish/hooks/chezmoi/post-apply.fish"]
