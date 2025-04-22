@@ -51,3 +51,7 @@ fi
 if [ "$(has_command jgmenu)" -eq "0" ]; then
     loader jgmenu "$DOTFILES/install/jgmenu.sh"
 fi
+
+if [ "$(has_command chezmoi)" -eq "0" ]; then
+    loader chezmoi "$DOTFILES/install/chezmoi.sh"
+fi

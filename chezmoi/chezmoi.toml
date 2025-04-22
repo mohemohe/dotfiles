@@ -1,0 +1,2 @@
+[hooks.apply.post]
+command = "~/.fish/hooks/chezmoi/post-apply.fish"
