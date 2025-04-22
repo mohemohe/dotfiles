@@ -20,3 +20,5 @@ git_pull_or_clone https://github.com/mohemohe/dotfiles.git "$DOTFILES"
 
 find "$DOTFILES/" -print0 -name '*.sh' | xargs -0 -I_ chmod +x '_'
 __DOTFILES="$DOTFILES" "$DOTFILES/_init.sh"
+
+exec "$SHELL" -l
