@@ -60,3 +60,8 @@ echo
 
 # reset
 echo . > /dev/null
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/mohemohe/.lmstudio/bin"
+# End of LM Studio CLI section
+

@@ -15,3 +15,8 @@ if [[ -s "${HOME}/.bashrc2" ]]; then {
 } fi
 
 [[ -s "/home/mohemohe/.gvm/scripts/gvm" ]] && source "/home/mohemohe/.gvm/scripts/gvm"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/mohemohe/.lmstudio/bin"
+# End of LM Studio CLI section
+

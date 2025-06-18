@@ -17,8 +17,8 @@ if ls --help 2>&1 | grep -e '--color' &> /dev/null
   alias ls 'ls --color'
 end
 
-if command -v exa &> /dev/null
-  alias ls 'exa'
+if command -v eza &> /dev/null
+  alias ls 'eza --icons --git'
   alias la 'll -a'
 end
 
