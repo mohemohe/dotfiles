@@ -34,5 +34,3 @@ git clone https://github.com/LazyVim/starter "${HOME}/.config/nvim"
 rm -rf "${HOME}/.config/nvim/.git"
 
 echo "LazyVim installation complete!"
-echo "Run 'nvim' to start Neovim with LazyVim"
-echo "It is recommended to run ':LazyHealth' after first launch"
