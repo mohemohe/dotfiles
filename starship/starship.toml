@@ -75,7 +75,7 @@ format = "[  $loaded ](bg:yellow fg:black)"
 disabled = false
 
 [golang]
-format = "[  $version ](bg:yellow fg:black)"
+format = "[ 󰟓 $version ](bg:yellow fg:black)"
 
 [nodejs]
 format = "[  $version ](bg:yellow fg:black)"
