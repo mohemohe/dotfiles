@@ -1,0 +1,138 @@
+format = """
+$cmd_duration\
+$line_break\
+[](black)\
+[ ](bg:black)\
+$status\
+$sudo\
+$jobs\
+$username\
+[@](bg:black red)\
+$hostname\
+[ ](bg:black)\
+[](fg:black bg:blue)\
+$directory\
+[](fg:blue bg:yellow)\
+$bun\
+$container\
+$direnv\
+$nodejs\
+$golang\
+$python\
+$php\
+$ruby\
+$rust\
+$java\
+$dart\
+[](fg:yellow bg:green)\
+$git_branch\
+$git_status\
+[](fg:green)\
+$fill\
+$time\
+$line_break\
+$character\
+"""
+
+right_format = ""
+
+[status]
+format = "[✘ ](bg:black red)"
+disabled = false
+
+[sudo]
+format = "[⚡ ](bg:black yellow)"
+disabled = false
+
+[jobs]
+format = "[$number⚙ ](bg:black cyan)"
+threshold = 1
+
+[username]
+format = "[$user](bg:black blue)"
+style_user = "bg:black blue"
+style_root = "bg:black yellow"
+show_always = true
+
+[hostname]
+format = "[$hostname](bg:black green)"
+ssh_only = false
+
+[directory]
+format = "[ $path ](bg:blue fg:black)"
+truncation_length = 0
+truncate_to_repo = false
+use_logical_path = true
+
+[bun]
+format = "[  $version ](bg:yellow fg:black)"
+
+[container]
+format = "[  $context ](bg:yellow fg:black)"
+
+[direnv]
+format = "[  $loaded ](bg:yellow fg:black)"
+disabled = false
+
+[golang]
+format = "[ 󰟓 $version ](bg:yellow fg:black)"
+
+[nodejs]
+format = "[  $version ](bg:yellow fg:black)"
+
+[python]
+format = "[  $version ](bg:yellow fg:black)"
+
+[ruby]
+format = "[  $version ](bg:yellow fg:black)"
+
+[rust]
+format = "[  $version ](bg:yellow fg:black)"
+
+[php]
+format = "[  $version ](bg:yellow fg:black)"
+
+[java]
+format = "[  $version ](bg:yellow fg:black)"
+
+[dart]
+format = "[  $version ](bg:yellow fg:black)"
+
+[git_branch]
+format = "[  $branch ](bg:green fg:black)"
+
+[git_status]
+format = "[$all_status$ahead_behind](bg:green fg:black)"
+conflicted = "═"
+ahead = " "
+behind = " "
+diverged = " "
+up_to_date = ""
+untracked = "󰡯 "
+stashed = "󰪺 "
+modified = " "
+staged = " "
+renamed = "󰑕 "
+deleted = "󱂥 "
+
+[time]
+format = "\\[[$time]($style)\\]"
+style = "dimmed"
+disabled = false
+time_format = "%I:%M:%S"
+
+[cmd_duration]
+format = "\n[>>> elapsed time $duration]($style)\n"
+style = "bold green"
+show_milliseconds = true
+
+[character]
+success_symbol = " [❯](bold blue)"
+error_symbol = " [❯](bold red)"
+vicmd_symbol = " [❮](bold red)"
+
+[line_break]
+disabled = false
+
+[fill]
+symbol = " "

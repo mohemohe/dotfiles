@@ -14,3 +14,5 @@ source ~/.orbstack/shell/init.fish 2>/dev/null || :
 set -gx PATH $PATH /Users/mohemohe/.lmstudio/bin
 # End of LM Studio CLI section
 
+
+string match -q "$TERM_PROGRAM" "kiro" and . (kiro --locate-shell-integration-path fish)

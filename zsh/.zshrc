@@ -65,3 +65,5 @@ echo . > /dev/null
 export PATH="$PATH:/Users/mohemohe/.lmstudio/bin"
 # End of LM Studio CLI section
 
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
