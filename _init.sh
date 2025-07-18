@@ -55,3 +55,7 @@ fi
 if [ "$(has_command chezmoi)" -eq "0" ]; then
     loader chezmoi "$DOTFILES/install/chezmoi.sh"
 fi
+
+if [ "$(has_command starship)" -eq "0" ]; then
+    loader chezmoi "$DOTFILES/install/starship.sh"
+fi
