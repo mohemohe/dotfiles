@@ -8,7 +8,7 @@ $sudo\
 $jobs\
 $username\
 [@](bg:black red)\
-$hostname\
+${custom.hostname}\
 [ ](bg:black)\
 [](fg:black bg:blue)\
 $directory\
@@ -55,8 +55,19 @@ style_root = "bg:black yellow"
 show_always = true
 
 [hostname]
-format = "[$hostname](bg:black green)"
-ssh_only = false
+disabled = true
+
+[custom.hostname]
+command = '''
+if [ -n "$HOST" ]; then
+    echo "$HOST"
+else
+    hostname
+fi
+'''
+when = true
+format = "[$output](bg:black green)"
+shell = ["sh"]
 
 [directory]
 format = "[ $path ](bg:blue fg:black)"
