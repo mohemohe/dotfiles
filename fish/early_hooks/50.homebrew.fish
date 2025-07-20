@@ -2,6 +2,8 @@ if not [ command -v brew &> /dev/null ] && [ -d "/opt/homebrew" ] && not contain
   set -U fish_user_paths "/opt/homebrew/bin" $fish_user_paths
 else if not [ command -v brew &> /dev/null ] && [ -d "/usr/local/homebrew" ] && not contains -- "/usr/local/homebrew/bin" $fish_user_paths
   set -U fish_user_paths "/usr/local/homebrew/bin" $fish_user_paths
+else if not [ command -v brew &> /dev/null ] && [ -d "/home/linuxbrew/.linuxbrew" ] && not contains -- "/home/linuxbrew/.linuxbrew/bin" $fish_user_paths
+  set -U fish_user_paths "/home/linuxbrew/.linuxbrew/bin" $fish_user_paths
 end
 
 if [ command -v brew &> /dev/null ]
