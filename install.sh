@@ -1,5 +1,7 @@
 #!/bin/sh
-set -uxe
+if [ "${SILENT:-0}" != "1" ]; then
+    set -xe
+fi
 
 DOTFILES="$HOME/.dotfiles"
 

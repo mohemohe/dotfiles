@@ -1,6 +1,6 @@
 #!/bin/sh
 if [ "${SILENT}" != "1" ]; then
-    set -uxe
+    set -xe
 fi
 
 DIRNAME="$(dirname "$0")"

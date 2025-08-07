@@ -1,6 +1,6 @@
 #!/bin/sh
 if [ "${SILENT:-0}" != "1" ]; then
-    set -uxe
+    set -xe
 fi
 
 has_command() {
@@ -54,5 +54,5 @@ loader() {
         fi
     fi
     # shellcheck disable=1090,2039
-    . "$target"
+    (. "$target")
 }
