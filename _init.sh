@@ -59,9 +59,3 @@ fi
 if [ "$(has_command starship)" -eq "0" ]; then
     loader starship "$DOTFILES/install/starship.sh"
 fi
-
-set +x
-echo
-echo "##############################"
-echo "##           DONE           ##"
-echo "##############################"
