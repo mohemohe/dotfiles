@@ -14,9 +14,9 @@ mkdir -p "$HOME/.local/bin"
 loader pacapt "$DOTFILES/install/pacapt.sh"
 loader sshconf "$DOTFILES/install/sshconf.sh"
 
-if [ "$(has_command bash)" -eq "0" ]; then
-    loader bash "$DOTFILES/install/bash.sh"
-fi
+# if [ "$(has_command bash)" -eq "0" ]; then
+#     loader bash "$DOTFILES/install/bash.sh"
+# fi
 
 if [ "$(has_command zsh)" -eq "0" ]; then
     loader zsh "$DOTFILES/install/zsh.sh"
