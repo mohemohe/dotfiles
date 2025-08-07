@@ -6,8 +6,6 @@ if [ "$XDG_CONFIG_HOME" = "" ]; then
     XDG_CONFIG_HOME="$HOME/.config"
 fi
 
-set -u
-
 rm -rf "$XDG_CONFIG_HOME/fish"
 mkdir "$XDG_CONFIG_HOME/fish"
 
