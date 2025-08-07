@@ -8,7 +8,10 @@ for i in ( find "$HOME/.fish/early_hooks" -type f | sort )
   source "$i"
 end
 
-if command -v neofetch >/dev/null; and [ "$TERM_PROGRAM" != "vscode" ]
+if command -v fastfetch >/dev/null; and [ "$TERM_PROGRAM" != "vscode" ]
+  fastfetch --pipe false > /tmp/info-$fish_pid &
+  set info_pid $last_pid
+else if command -v neofetch >/dev/null; and [ "$TERM_PROGRAM" != "vscode" ]
   neofetch > /tmp/info-$fish_pid &
   set info_pid $last_pid
 else if command -v archey >/dev/null; and [ "$TERM_PROGRAM" != "vscode" ]
