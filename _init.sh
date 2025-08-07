@@ -32,9 +32,9 @@ if [ "$(has_command tmux)" -eq "0" ]; then
     loader tmux "$DOTFILES/install/tmux.sh"
 fi
 
-if [ "$(has_command vim)" -eq "0" ]; then
-    loader vim "$DOTFILES/install/vim.sh"
-fi
+# if [ "$(has_command vim)" -eq "0" ]; then
+#     loader vim "$DOTFILES/install/vim.sh"
+# fi
 
 if [ "$(has_command nvim)" -eq "0" ]; then
     loader neovim "$DOTFILES/install/nvim.sh"
