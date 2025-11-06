@@ -37,6 +37,7 @@ if [ "$info_pid" != "" ]; and [ "$TERM_PROGRAM" != "vscode" ]
   cat /tmp/info-$fish_pid
   rm -f /tmp/info-$fish_pid
   set -e info_pid
+  export EDITOR=(which code)
 end
 
 # if [ "$info_pid" != "" ]
